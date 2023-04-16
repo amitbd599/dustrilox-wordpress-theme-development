@@ -147,15 +147,23 @@ add_action( 'dustrilox_before_main_content', 'dustrilox_breadcrumb_func' );
 // dustrilox_search_form
 function dustrilox_search_form() {
     ?>
-     <div class="search-wrapper p-relative transition-3 d-none">
-         <div class="search-form transition-3">
-             <form method="get" action="<?php print esc_url( home_url( '/' ) );?>" >
-                 <input type="search" name="s" value="<?php print esc_attr( get_search_query() )?>" placeholder="<?php print esc_attr__( 'Enter Your Keyword', 'dustrilox' );?>" >
-                 <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
-             </form>
-             <a href="javascript:void(0);" class="search-close"><i class="far fa-times"></i></a>
+
+<div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+         </button>
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <form method="get" action="<?php print esc_url( home_url( '/' ) );?>" >
+            <input type="search" name="s" value="<?php print esc_attr( get_search_query() )?>" placeholder="<?php print esc_attr__( 'Enter Your Keyword', 'dustrilox' );?>" >
+                     <button type="submit">
+                        <i class="fa fa-search"></i>
+                     </button>
+               </form>
+            </div>
          </div>
-     </div>
+      </div>
+
    <?php
 }
 

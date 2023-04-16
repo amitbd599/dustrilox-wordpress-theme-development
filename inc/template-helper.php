@@ -116,6 +116,9 @@ function dustrilox_header_logo() { ?>
    <?php
 }
 
+
+add_action( 'dustrilox_before_main_content', 'dustrilox_search_form' );
+
 // header logo
 function dustrilox_header_sticky_logo() {?>
     <?php
