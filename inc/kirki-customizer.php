@@ -462,13 +462,26 @@ function _header_side_fields( $fields ) {
             'off' => esc_html__( 'Disable', 'dustrilox' ),
         ],
     ];
+
+    $fields[] = [
+        'type'     => 'switch',
+        'settings' => 'dustrilox_side_search',
+        'label'    => esc_html__( 'Search On/Off', 'dustrilox' ),
+        'section'  => 'header_side_setting',
+        'default'  => '0',
+        'priority' => 10,
+        'choices'  => [
+            'on'  => esc_html__( 'Enable', 'dustrilox' ),
+            'off' => esc_html__( 'Disable', 'dustrilox' ),
+        ],
+    ];
     $fields[] = [
         'type'        => 'image',
         'settings'    => 'dustrilox_side_logo',
         'label'       => esc_html__( 'Logo Side', 'dustrilox' ),
         'description' => esc_html__( 'Logo Side', 'dustrilox' ),
         'section'     => 'header_side_setting',
-        'default'     => get_template_directory_uri() . '/assets/img/logo/logo.png',
+        'default'     => get_template_directory_uri() . '/assets/img/logo/logo-black.png',
     ];
     $fields[] = [
         'type'     => 'textarea',
@@ -482,6 +495,15 @@ function _header_side_fields( $fields ) {
     $fields[] = [
         'type'     => 'textarea',
         'settings' => 'dustrilox_extra_map',
+        'label'    => esc_html__( 'Map Address Iframe', 'dustrilox' ),
+        'section'  => 'header_side_setting',
+        'default'  => esc_html__( '#', 'dustrilox' ),
+        'priority' => 10,
+    ];
+
+    $fields[] = [
+        'type'     => 'textarea',
+        'settings' => 'dustrilox_extra_map_iframe',
         'label'    => esc_html__( 'Map Address Iframe', 'dustrilox' ),
         'section'  => 'header_side_setting',
         'default'  => esc_html__( '#', 'dustrilox' ),
