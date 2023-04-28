@@ -118,11 +118,11 @@
                            <div class="sm-clist__text sm-clist__text-2">
                               <span><?php echo esc_html__( 'Get A Quote', 'dustrilox' );?></span>
                               <h4>
-                                 <a href="<?php echo esc_html($dustrilox_button_link);?>"><?php echo esc_html($dustrilox_button_text);?></a>
+                                 <a href="<?php echo esc_url($dustrilox_button_link);?>"><?php echo esc_html($dustrilox_button_text);?></a>
                               </h4>
                            </div>
                            <div class="sm-clist__icon sm-clist__icon-2">
-                             <a href="<?php echo esc_html($dustrilox_button_link);?>"> <i class="fal fa-long-arrow-right"></i></a>
+                             <a href="<?php echo esc_url($dustrilox_button_link);?>"> <i class="fal fa-long-arrow-right"></i></a>
                            </div>
                         </div>
                         <?php endif;?>
