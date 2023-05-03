@@ -544,6 +544,34 @@ function _header_side_fields( $fields ) {
         'default'  => esc_html__( 'info@weblearnbd.net', 'dustrilox' ),
         'priority' => 10,
     ];
+
+
+    // Repeater settings
+
+    $fields[] = [
+        'type'     => 'repeater',
+        'label'    => esc_html__( 'Gallery Repeater', 'dustrilox' ),
+        'section'  => 'header_side_setting',
+        'row_label' =>[
+            'type' => 'text',
+            'value' => esc_html__( 'client', 'dustrilox' ),
+        ],
+        'button_label' => esc_html__('Add new Photo', 'dustrilox'),
+        'settings' =>   'dustrilox_side_gallery_setting',
+            'fields'=> [
+                'dustrilox_gallery_image' =>[
+                    'type' => 'image',
+                    'label' => esc_html__('Gallery Image', 'dustrilox'),
+                    'description' => esc_html__('Upload Gallery Image', 'dustrilox'),
+                ]
+            ]
+    ];
+
+
+
+
+
+
     return $fields;
 }
 add_filter( 'kirki/fields', '_header_side_fields' );
