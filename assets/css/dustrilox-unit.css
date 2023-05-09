@@ -969,153 +969,40 @@ blockquote cite::before {
   display: none;
 }
 
-/*tutor */
-.tutor-container,
-.tutor-container-sm,
-.tutor-container-md,
-.tutor-container-lg,
-.tutor-container-xl,
-.tutor-container-xxl {
-  max-width: 1225px;
+.footer-default-widget ul li {
+  list-style: none;
+  margin-bottom: 15px;
 }
-
-.cat__icon {
-  font-size: 25px;
+.footer-default-widget ul li a {
+  font-size: 16px;
+  font-weight: var(--tp-fw-regular);
+  color: #b4b8bb;
+  position: relative;
 }
-.fea__icon {
-  font-size: 40px;
-}
-.research__features-icon span {
-  font-size: 25px;
-}
-.tutor-wrap {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-.tutor-single-course-sidebar .tutor-course-details-widget {
-  padding: 30px;
-  -webkit-box-shadow: 0px 30px 50px 0px rgba(1, 11, 60, 0.1);
-  -moz-box-shadow: 0px 30px 50px 0px rgba(1, 11, 60, 0.1);
-  -ms-box-shadow: 0px 30px 50px 0px rgba(1, 11, 60, 0.1);
-  -o-box-shadow: 0px 30px 50px 0px rgba(1, 11, 60, 0.1);
-  box-shadow: 0px 30px 50px 0px rgba(1, 11, 60, 0.1);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
-}
-.tutor-form-group .acf-user-register-fields.acf-fields.-clear,
-.tutor-form-group h2 {
-  display: none;
-}
-
-/*woo */
-.woocommerce-form-row input {
-  width: 100%;
-  height: 50px;
-  line-height: 45px;
-  padding: 0 30px;
-  font-size: 14px;
-  border: 2px solid transparent;
-  background: var(--tp-grey-2);
-  color: var(--tp-common-black);
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
-  border-radius: 6px;
-}
-.woocommerce form .form-row input.input-text,
-.woocommerce form .form-row textarea {
-  width: 100%;
-  height: 50px;
-  line-height: 45px;
-  padding: 0 30px;
-  font-size: 14px;
-  border: 2px solid transparent;
-  background: var(--tp-grey-2);
-  color: var(--tp-common-black);
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
-  border-radius: 6px;
-}
-.woocommerce form .form-row textarea {
-  height: 200px;
-}
-.woocommerce-form-row label {
-  margin-left: 0;
-  margin-top: 0;
-}
-.woocommerce #respond input#submit,
-.woocommerce a.button,
-.woocommerce button.button,
-.woocommerce input.button {
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--tp-common-white);
-  background-color: var(--tp-theme-1);
-  padding: 0 30px;
-  height: 50px;
-  line-height: 50px;
-  text-transform: capitalize;
-}
-#customer_login h2 {
-  font-size: 25px;
-}
-.woocommerce #respond input#submit.disabled,
-.woocommerce #respond input#submit:disabled,
-.woocommerce #respond input#submit:disabled[disabled],
-.woocommerce a.button.disabled,
-.woocommerce a.button:disabled,
-.woocommerce a.button:disabled[disabled],
-.woocommerce button.button.disabled,
-.woocommerce button.button:disabled,
-.woocommerce button.button:disabled[disabled],
-.woocommerce input.button.disabled,
-.woocommerce input.button:disabled,
-.woocommerce input.button:disabled[disabled] {
-  color: inherit;
-  cursor: not-allowed;
-  opacity: 0.5;
-  padding: 0 35px;
-  color: #fff;
-}
-.select2-container--default
-  .select2-selection--single
-  .select2-selection__rendered {
-  color: #444;
-  line-height: 50px;
-}
-.select2-container .select2-selection--single {
-  box-sizing: border-box;
-  cursor: pointer;
-  display: block;
-  height: 50px;
-  margin: 0 0 -4px;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-user-select: none;
-  background: #f5f6f8;
-  border: 0;
-}
-.select2-container--default
-  .select2-selection--single
-  .select2-selection__arrow {
-  height: 47px;
+.footer-default-widget ul li a::before {
   position: absolute;
-  top: 1px;
-  right: 15px;
-  width: 20px;
+  content: "";
+  left: auto;
+  right: 0;
+  bottom: 0;
+  background: var(--tp-common-white);
+  width: 0;
+  height: 1px;
+  top: 20px;
 }
-.select2-container .select2-selection--single .select2-selection__rendered {
-  padding-left: 25px;
+.footer-default-widget ul li:hover > a::before {
+  width: 100%;
+  left: 0;
+  right: auto;
 }
-.woocommerce form .form-row label {
-  line-height: 2;
-  margin-left: 0;
-  margin-top: 10px;
+
+.footer-default-widget #menu-main-services li {
+  width: 50%;
+  float: left;
+}
+
+.footer__post-item:not(:last-child) {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
 }

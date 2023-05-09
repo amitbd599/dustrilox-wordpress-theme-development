@@ -94,51 +94,34 @@ function dustrilox_breadcrumb_func() {
             $bg_img = !empty( $bg_img_from_page ) ? $bg_img_from_page['url'] : $bg_img;
         }?>
 
-         <!-- page title area start -->
-        <?php if(!empty($breadcrumb_switch)) : ?>
+<!-- page title area start -->
+<?php if(!empty($breadcrumb_switch)) : ?>
 
 
 
-            <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center"
-         data-background="assets/img/bg/page-bg.jpg">
-         <div class="container">
-            <div class="row">
-               <div class="col-xxl-12">
-                  <div class="page__title-wrapper mt-100">
-                     <div class="breadcrumb-menu">
-                        <ul>
-                           <li><a href="index.html">Home</a></li>
-                           <li><span>About Us</span></li>
-                        </ul>
-                     </div>
-                     <h3 class="page__title mt-20">About Company</h3>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-
-         <section class="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay d-none<?php print esc_attr( $breadcrumb_class );?>" data-background="<?php print esc_attr($bg_img);?>">
-            <div class="container">
-               <div class="row">
-               	<?php if (!empty($breadcrumb_info_switch)) : ?>
-                  <div class="col-xxl-12">
-                     <div class="breadcrumb__content text-center p-relative z-index-1">
-                        <h3 class="breadcrumb__title"><?php echo wp_kses_post( $title ); ?></h3>
-                        <div class="breadcrumb__list">
-                           <?php if(function_exists('bcn_display')) {
+<section
+    class="page__title-area page__title-height page__title-overlay d-flex align-items-center <?php print esc_attr( $breadcrumb_class );?>"
+    data-background="<?php print esc_attr($bg_img);?>">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-12">
+                <div class="page__title-wrapper mt-100">
+                    <div class="breadcrumb-menu">
+                        <?php if(function_exists('bcn_display')) {
 	                           bcn_display();
 	                        } ?>
-                        </div>
-                     </div>
-                  </div>
-                  <?php endif; ?>
-               </div>
+                    </div>
+                    <h3 class="page__title mt-20"><?php echo dustrilox_kses( $title ); ?></h3>
+                </div>
             </div>
-         </section>
-         <?php endif; ?>
-         <!-- page title area end -->
-        <?php
+        </div>
+    </div>
+</section>
+
+
+<?php endif; ?>
+<!-- page title area end -->
+<?php
       }
 }
 
@@ -149,22 +132,23 @@ function dustrilox_search_form() {
     ?>
 
 <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
-         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-         </button>
-         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <form method="get" action="<?php print esc_url( home_url( '/' ) );?>" >
-            <input type="search" name="s" value="<?php print esc_attr( get_search_query() )?>" placeholder="<?php print esc_attr__( 'Enter Your Keyword', 'dustrilox' );?>" >
-                     <button type="submit">
-                        <i class="fa fa-search"></i>
-                     </button>
-               </form>
-            </div>
-         </div>
-      </div>
+    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="get" action="<?php print esc_url( home_url( '/' ) );?>">
+                <input type="search" name="s" value="<?php print esc_attr( get_search_query() )?>"
+                    placeholder="<?php print esc_attr__( 'Enter Your Keyword', 'dustrilox' );?>">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 
-   <?php
+<?php
 }
 
 add_action( 'dustrilox_before_main_content', 'dustrilox_search_form' );

@@ -51,13 +51,14 @@ function dustrilox_header_lang_defualt() {
     $dustrilox_header_lang = get_theme_mod( 'dustrilox_header_lang', false );
     if ( $dustrilox_header_lang ): ?>
 
-    <ul>
-        <li><a href="javascript:void(0)" class="lang__btn"><?php print esc_html__( 'English', 'dustrilox' );?> <i class="fal fa-angle-down"></i></a>
+<ul>
+    <li><a href="javascript:void(0)" class="lang__btn"><?php print esc_html__( 'English', 'dustrilox' );?> <i
+                class="fal fa-angle-down"></i></a>
         <?php do_action( 'dustrilox_language' );?>
-        </li>
-    </ul>
+    </li>
+</ul>
 
-    <?php endif;?>
+<?php endif;?>
 <?php
 }
 
@@ -94,7 +95,7 @@ add_action( 'dustrilox_language', 'dustrilox_language_list' );
 
 // header logo
 function dustrilox_header_logo() { ?>
-      <?php
+<?php
         $dustrilox_logo_on = function_exists( 'get_field' ) ? get_field( 'is_enable_sec_logo' ) : NULL;
 
         $dustrilox_logo = get_template_directory_uri() . '/assets/img/logo/logo-white.png';
@@ -104,16 +105,17 @@ function dustrilox_header_logo() { ?>
         $dustrilox_secondary_logo = get_theme_mod( 'seconday_logo', $dustrilox_logo_black );
       ?>
 
-      <?php if ( !empty( $dustrilox_logo_on ) ) : ?>
-         <a class="secondary-logo" href="<?php print esc_url( home_url( '/' ) );?>">
-             <img src="<?php print esc_url( $dustrilox_secondary_logo );?>" alt="<?php print esc_attr__( 'logo', 'dustrilox' );?>" />
-         </a>
-      <?php else : ?>
-         <a class="standard-logo" href="<?php print esc_url( home_url( '/' ) );?>">
-             <img src="<?php print esc_url( $dustrilox_site_logo );?>" alt="<?php print esc_attr__( 'logo', 'dustrilox' );?>" />
-         </a>
-      <?php endif; ?>
-   <?php
+<?php if ( !empty( $dustrilox_logo_on ) ) : ?>
+<a class="secondary-logo" href="<?php print esc_url( home_url( '/' ) );?>">
+    <img src="<?php print esc_url( $dustrilox_secondary_logo );?>"
+        alt="<?php print esc_attr__( 'logo', 'dustrilox' );?>" />
+</a>
+<?php else : ?>
+<a class="standard-logo" href="<?php print esc_url( home_url( '/' ) );?>">
+    <img src="<?php print esc_url( $dustrilox_site_logo );?>" alt="<?php print esc_attr__( 'logo', 'dustrilox' );?>" />
+</a>
+<?php endif; ?>
+<?php
 }
 
 
@@ -121,14 +123,15 @@ add_action( 'dustrilox_before_main_content', 'dustrilox_search_form' );
 
 // header logo
 function dustrilox_header_sticky_logo() {?>
-    <?php
+<?php
         $dustrilox_logo_black = get_template_directory_uri() . '/assets/img/logo/logo-black.png';
         $dustrilox_secondary_logo = get_theme_mod( 'seconday_logo', $dustrilox_logo_black );
     ?>
-      <a class="sticky-logo" href="<?php print esc_url( home_url( '/' ) );?>">
-          <img src="<?php print esc_url( $dustrilox_secondary_logo );?>" alt="<?php print esc_attr__( 'logo', 'dustrilox' );?>" />
-      </a>
-    <?php
+<a class="sticky-logo" href="<?php print esc_url( home_url( '/' ) );?>">
+    <img src="<?php print esc_url( $dustrilox_secondary_logo );?>"
+        alt="<?php print esc_attr__( 'logo', 'dustrilox' );?>" />
+</a>
+<?php
 }
 
 function dustrilox_mobile_logo() {
@@ -139,13 +142,14 @@ function dustrilox_mobile_logo() {
 
     ?>
 
-    <?php if ( !empty( $dustrilox_mobile_logo_hide ) ): ?>
-    <div class="side__logo mb-25">
-        <a class="sideinfo-logo" href="<?php print esc_url( home_url( '/' ) );?>">
-            <img src="<?php print esc_url( $dustrilox_site_logo );?>" alt="<?php print esc_attr__( 'logo', 'dustrilox' );?>" />
-        </a>
-    </div>
-    <?php endif;?>
+<?php if ( !empty( $dustrilox_mobile_logo_hide ) ): ?>
+<div class="side__logo mb-25">
+    <a class="sideinfo-logo" href="<?php print esc_url( home_url( '/' ) );?>">
+        <img src="<?php print esc_url( $dustrilox_site_logo );?>"
+            alt="<?php print esc_attr__( 'logo', 'dustrilox' );?>" />
+    </a>
+</div>
+<?php endif;?>
 
 
 
@@ -162,27 +166,32 @@ function dustrilox_header_social_profiles() {
     $dustrilox_topbar_linkedin_url = get_theme_mod( 'dustrilox_topbar_linkedin_url', __( '#', 'dustrilox' ) );
     $dustrilox_topbar_youtube_url = get_theme_mod( 'dustrilox_topbar_youtube_url', __( '#', 'dustrilox' ) );
     ?>
-        <ul>
-        <?php if ( !empty( $dustrilox_topbar_fb_url ) ): ?>
-          <li><a href="<?php print esc_url( $dustrilox_topbar_fb_url );?>"><span><i class="fab fa-facebook-f"></i></span></a></li>
-        <?php endif;?>
+<ul>
+    <?php if ( !empty( $dustrilox_topbar_fb_url ) ): ?>
+    <li><a href="<?php print esc_url( $dustrilox_topbar_fb_url );?>"><span><i class="fab fa-facebook-f"></i></span></a>
+    </li>
+    <?php endif;?>
 
-        <?php if ( !empty( $dustrilox_topbar_twitter_url ) ): ?>
-            <li><a href="<?php print esc_url( $dustrilox_topbar_twitter_url );?>"><span><i class="fab fa-twitter"></i></span></a></li>
-        <?php endif;?>
+    <?php if ( !empty( $dustrilox_topbar_twitter_url ) ): ?>
+    <li><a href="<?php print esc_url( $dustrilox_topbar_twitter_url );?>"><span><i
+                    class="fab fa-twitter"></i></span></a></li>
+    <?php endif;?>
 
-        <?php if ( !empty( $dustrilox_topbar_instagram_url ) ): ?>
-            <li><a href="<?php print esc_url( $dustrilox_topbar_instagram_url );?>"><span><i class="fab fa-instagram"></i></span></a></li>
-        <?php endif;?>
+    <?php if ( !empty( $dustrilox_topbar_instagram_url ) ): ?>
+    <li><a href="<?php print esc_url( $dustrilox_topbar_instagram_url );?>"><span><i
+                    class="fab fa-instagram"></i></span></a></li>
+    <?php endif;?>
 
-        <?php if ( !empty( $dustrilox_topbar_linkedin_url ) ): ?>
-            <li><a href="<?php print esc_url( $dustrilox_topbar_linkedin_url );?>"><span><i class="fab fa-linkedin"></i></span></a></li>
-        <?php endif;?>
+    <?php if ( !empty( $dustrilox_topbar_linkedin_url ) ): ?>
+    <li><a href="<?php print esc_url( $dustrilox_topbar_linkedin_url );?>"><span><i
+                    class="fab fa-linkedin"></i></span></a></li>
+    <?php endif;?>
 
-        <?php if ( !empty( $dustrilox_topbar_youtube_url ) ): ?>
-            <li><a href="<?php print esc_url( $dustrilox_topbar_youtube_url );?>"><span><i class="fab fa-youtube"></i></span></a></li>
-        <?php endif;?>
-        </ul>
+    <?php if ( !empty( $dustrilox_topbar_youtube_url ) ): ?>
+    <li><a href="<?php print esc_url( $dustrilox_topbar_youtube_url );?>"><span><i
+                    class="fab fa-youtube"></i></span></a></li>
+    <?php endif;?>
+</ul>
 
 <?php
 }
@@ -195,47 +204,41 @@ function dustrilox_footer_social_profiles() {
     $dustrilox_footer_youtube_url = get_theme_mod( 'dustrilox_footer_youtube_url', __( '#', 'dustrilox' ) );
     ?>
 
-        <ul>
-        <?php if ( !empty( $dustrilox_footer_fb_url ) ): ?>
-            <li>
-                <a href="<?php print esc_url( $dustrilox_footer_fb_url );?>">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </li>
-        <?php endif;?>
 
-        <?php if ( !empty( $dustrilox_footer_twitter_url ) ): ?>
-            <li>
-                <a href="<?php print esc_url( $dustrilox_footer_twitter_url );?>">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </li>
-        <?php endif;?>
+<?php if ( !empty( $dustrilox_footer_fb_url ) ): ?>
 
-        <?php if ( !empty( $dustrilox_footer_instagram_url ) ): ?>
-            <li>
-                <a href="<?php print esc_url( $dustrilox_footer_instagram_url );?>">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </li>
-        <?php endif;?>
+<a href="<?php print esc_url( $dustrilox_footer_fb_url );?>">
+    <?php echo esc_html__('Fb.' , 'dustrilox' ) ?>
+</a>
 
-        <?php if ( !empty( $dustrilox_footer_linkedin_url ) ): ?>
-            <li>
-                <a href="<?php print esc_url( $dustrilox_footer_linkedin_url );?>">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </li>
-        <?php endif;?>
+<?php endif;?>
 
-        <?php if ( !empty( $dustrilox_footer_youtube_url ) ): ?>
-            <li>
-                <a href="<?php print esc_url( $dustrilox_footer_youtube_url );?>">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </li>
-        <?php endif;?>
-        </ul>
+<?php if ( !empty( $dustrilox_footer_twitter_url ) ): ?>
+
+<a href="<?php print esc_url( $dustrilox_footer_twitter_url );?>">
+    <?php echo esc_html__('Tw.' , 'dustrilox' ) ?>
+</a>
+
+<?php endif;?>
+
+<?php if ( !empty( $dustrilox_footer_instagram_url ) ): ?>
+
+<a href="<?php print esc_url( $dustrilox_footer_instagram_url );?>">
+    <?php echo esc_html__('Yt.' , 'dustrilox' ) ?>
+</a>
+
+<?php endif;?>
+
+<?php if ( !empty( $dustrilox_footer_linkedin_url ) ): ?>
+
+<a href="<?php print esc_url( $dustrilox_footer_linkedin_url );?>">
+    <?php echo esc_html__('Ln.' , 'dustrilox' ) ?>
+</a>
+
+<?php endif;?>
+
+
+
 <?php
 }
 
@@ -245,7 +248,7 @@ function dustrilox_footer_social_profiles() {
  */
 function dustrilox_header_menu() {
     ?>
-    <?php
+<?php
         wp_nav_menu( [
             'theme_location' => 'main-menu',
             'menu_class'     => '',
@@ -254,7 +257,7 @@ function dustrilox_header_menu() {
             'walker'         => new Dustrilox_Navwalker_Class,
         ] );
     ?>
-    <?php
+<?php
 }
 
 /**
@@ -263,7 +266,7 @@ function dustrilox_header_menu() {
  */
 function dustrilox_mobile_menu() {
     ?>
-    <?php
+<?php
         $dustrilox_menu = wp_nav_menu( [
             'theme_location' => 'main-menu',
             'menu_class'     => '',
@@ -275,26 +278,10 @@ function dustrilox_mobile_menu() {
     $dustrilox_menu = str_replace( "menu-item-has-children", "menu-item-has-children has-children", $dustrilox_menu );
         echo wp_kses_post( $dustrilox_menu );
     ?>
-    <?php
+<?php
 }
 
-/**
- * [dustrilox_search_menu description]
- * @return [type] [description]
- */
-function dustrilox_header_search_menu() {
-    ?>
-    <?php
-        wp_nav_menu( [
-            'theme_location' => 'header-search-menu',
-            'menu_class'     => '',
-            'container'      => '',
-            'fallback_cb'    => 'Dustrilox_Navwalker_Class::fallback',
-            'walker'         => new Dustrilox_Navwalker_Class,
-        ] );
-    ?>
-    <?php
-}
+
 
 /**
  * [dustrilox_footer_menu description]

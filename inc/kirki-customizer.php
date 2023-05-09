@@ -40,6 +40,8 @@ function dustrilox_customizer_panels_sections( $wp_customize ) {
         'panel'       => 'dustrilox_customizer',
     ] );
 
+
+
     $wp_customize->add_section( 'section_header_logo', [
         'title'       => esc_html__( 'Header Setting', 'dustrilox' ),
         'description' => '',
@@ -82,6 +84,14 @@ function dustrilox_customizer_panels_sections( $wp_customize ) {
 
     $wp_customize->add_section( 'footer_setting', [
         'title'       => esc_html__( 'Footer Settings', 'dustrilox' ),
+        'description' => '',
+        'priority'    => 16,
+        'capability'  => 'edit_theme_options',
+        'panel'       => 'dustrilox_customizer',
+    ] );
+
+    $wp_customize->add_section( 'footer_social', [
+        'title'       => esc_html__( 'Footer Social', 'dustrilox' ),
         'description' => '',
         'priority'    => 16,
         'capability'  => 'edit_theme_options',
@@ -342,49 +352,49 @@ add_filter( 'kirki/fields', '_header_top_fields' );
 /*
 Header Social
  */
-function _header_social_fields( $fields ) {
+function _footer_social_fields( $fields ) {
     // header section social
     $fields[] = [
         'type'     => 'text',
-        'settings' => 'dustrilox_topbar_fb_url',
+        'settings' => 'dustrilox_footer_fb_url',
         'label'    => esc_html__( 'Facebook Url', 'dustrilox' ),
-        'section'  => 'header_social',
+        'section'  => 'footer_social',
         'default'  => esc_html__( '#', 'dustrilox' ),
         'priority' => 10,
     ];
 
     $fields[] = [
         'type'     => 'text',
-        'settings' => 'dustrilox_topbar_twitter_url',
+        'settings' => 'dustrilox_footer_twitter_url',
         'label'    => esc_html__( 'Twitter Url', 'dustrilox' ),
-        'section'  => 'header_social',
+        'section'  => 'footer_social',
         'default'  => esc_html__( '#', 'dustrilox' ),
         'priority' => 10,
     ];
 
     $fields[] = [
         'type'     => 'text',
-        'settings' => 'dustrilox_topbar_linkedin_url',
+        'settings' => 'dustrilox_footer_linkedin_url',
         'label'    => esc_html__( 'Linkedin Url', 'dustrilox' ),
-        'section'  => 'header_social',
+        'section'  => 'footer_social',
         'default'  => esc_html__( '#', 'dustrilox' ),
         'priority' => 10,
     ];
 
     $fields[] = [
         'type'     => 'text',
-        'settings' => 'dustrilox_topbar_instagram_url',
+        'settings' => 'dustrilox_footer_instagram_url',
         'label'    => esc_html__( 'Instagram Url', 'dustrilox' ),
-        'section'  => 'header_social',
+        'section'  => 'footer_social',
         'default'  => esc_html__( '#', 'dustrilox' ),
         'priority' => 10,
     ];
 
     $fields[] = [
         'type'     => 'text',
-        'settings' => 'dustrilox_topbar_youtube_url',
+        'settings' => 'dustrilox_footer_youtube_url',
         'label'    => esc_html__( 'Youtube Url', 'dustrilox' ),
-        'section'  => 'header_social',
+        'section'  => 'footer_social',
         'default'  => esc_html__( '#', 'dustrilox' ),
         'priority' => 10,
     ];
@@ -392,7 +402,7 @@ function _header_social_fields( $fields ) {
 
     return $fields;
 }
-add_filter( 'kirki/fields', '_header_social_fields' );
+add_filter( 'kirki/fields', '_footer_social_fields' );
 
 /*
 Header Settings
