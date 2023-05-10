@@ -8,22 +8,22 @@
  */
 
 if ( is_single() ) : ?>
-    <article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-image mb-50' );?>>
+
+<article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-image' );?>>
+    <div class="tp-blog mb-50">
+
         <?php if ( has_post_thumbnail() ): ?>
-            <div class="postbox__thumb">
-                <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
-            </div>
+        <div class="tp-blog__thumb m-img mb-35">
+            <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
+        </div>
         <?php endif;?>
 
-        <div class="postbox__content">
-            <!-- blog meta -->
-            <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
-            <h3 class="postbox__title">
-                <?php the_title();?>
-            </h3>
-            <div class="postbox__text">
-               <?php the_content();?>
-                <?php
+
+        <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
+
+        <div class="postbox_content">
+            <?php the_content(); ?>
+            <?php
                     wp_link_pages( [
                         'before'      => '<div class="page-links">' . esc_html__( 'Pages:', 'dustrilox' ),
                         'after'       => '</div>',
@@ -31,33 +31,45 @@ if ( is_single() ) : ?>
                         'link_after'  => '</span>',
                     ] );
                 ?>
-            </div>
+        </div>
+
+
+        <div class="blog_details_tag">
             <?php print dustrilox_get_tag();?>
         </div>
-    </article>
+    </div>
+</article>
+
+
 <?php else: ?>
 
-    <article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-image mb-50' );?>>
-        <?php if ( has_post_thumbnail() ): ?>
-        <div class="postbox__thumb">
-            <a href="<?php the_permalink();?>">
-                <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
-            </a>
-        </div>
-        <?php endif; ?>
-        <div class="postbox__content">
-            <!-- blog meta -->
-            <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
 
-            <h3 class="postbox__title">
-                <a href="<?php the_permalink();?>"><?php the_title();?></a>
-            </h3>
-            <div class="postbox__text">
-                <?php the_excerpt();?>
-            </div>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'tp-blog format-image mb-60' );?>>
 
-            <!-- blog btn -->
-            <?php get_template_part( 'template-parts/blog/blog-btn' ); ?>
-        </div>
-    </article>
+    <?php if(has_post_thumbnail()) : ?>
+    <div class="tp-blog__thumb m-img mb-35">
+        <a href="<?php the_permalink();?>">
+            <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
+        </a>
+    </div>
+    <?php endif;?>
+
+    <div class="tp-blog__content">
+        <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
+
+        <h3 class="tp-blog__title mb-15"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+        <p> <?php the_excerpt();?></p>
+        <!-- blog btn -->
+        <?php get_template_part( 'template-parts/blog/blog-btn' ); ?>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
 <?php endif;?>

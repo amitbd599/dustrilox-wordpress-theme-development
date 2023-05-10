@@ -17,14 +17,18 @@ $dustrilox_blog_cat = get_theme_mod( 'dustrilox_blog_cat', false );
 ?>
 
 
-<div class="postbox__meta">
+
+<div class="tp-blog__meta mb-15">
     <?php if ( !empty($dustrilox_blog_author) ): ?>
-    <span><a href="<?php print esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );?>"><i class="fal fa-user"></i> <?php print get_the_author();?></a></span>
+    <span><a href="<?php print esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );?>"><i
+                class="fal fa-user"></i> <?php print get_the_author();?></a></span>
     <?php endif;?>
 
     <?php if ( !empty($dustrilox_blog_cat) ): ?>
     <?php if ( !empty( $categories[0]->name ) ): ?>
-    <span><i class="icon_tag_alt"></i> <a href="<?php print esc_url(get_category_link($categories[0]->term_id)); ?>"><?php echo esc_html($categories[0]->name); ?></a> </span>
+    <span><i class="icon_tag_alt"></i> <a
+            href="<?php print esc_url(get_category_link($categories[0]->term_id)); ?>"><?php echo esc_html($categories[0]->name); ?></a>
+    </span>
     <?php endif;?>
     <?php endif;?>
 

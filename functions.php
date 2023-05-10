@@ -225,25 +225,25 @@ if ( !function_exists( 'dustrilox_comment' ) ) {
         $args['reply_text'] = 'Reply';
         $replayClass = 'comment-depth-' . esc_attr( $depth );
         ?>
-            <li id="comment-<?php comment_ID();?>">
-                <div class="comments-box grey-bg-2">
-                    <div class="comments-avatar">
-                        <?php print get_avatar( $comment, 102, null, null, [ 'class' => [] ] );?>
-                    </div>
-                    <div class="comments-text">
-                        <div class="avatar-name">
-                            <h5><?php print get_comment_author_link();?></h5>
-                            <span><?php comment_time( get_option( 'date_format' ) );?></span>
-                        </div>
-                        <?php comment_text();?>
+<li id="comment-<?php comment_ID();?>">
+    <div class="comments-box ">
+        <div class="comments-avatar">
+            <?php print get_avatar( $comment, 102, null, null, [ 'class' => [] ] );?>
+        </div>
+        <div class="comments-text">
+            <div class="avatar-name">
+                <h5><?php print get_comment_author_link();?></h5>
+                <span class="post-meta"><?php comment_time( get_option( 'date_format' ) );?></span>
+            </div>
+            <?php comment_text();?>
 
-                        <div class="comments-replay">
-                            <?php comment_reply_link( array_merge( $args, [ 'depth' => $depth, 'max_depth' => $args['max_depth'] ] ) );?>
-                        </div>
+            <div class="comments-replay">
+                <?php comment_reply_link( array_merge( $args, [ 'depth' => $depth, 'max_depth' => $args['max_depth'] ] ) );?>
+            </div>
 
-                    </div>
-                </div>
-        <?php
+        </div>
+    </div>
+    <?php
     }
 }
 

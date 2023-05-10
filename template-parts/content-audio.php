@@ -11,22 +11,22 @@
     if ( is_single() ):
 ?>
 
-    <article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-audio mb-50' );?>>
-        <?php if ( !empty( $dustrilox_audio_url ) ): ?>
-        <div class="postbox__thumb postbox__audio w-img p-relative">
-            <?php echo wp_oembed_get( $dustrilox_audio_url ); ?>
-        </div>
-        <?php endif;?>
+<article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-audio mb-50' );?>>
+    <?php if ( !empty( $dustrilox_audio_url ) ): ?>
+    <div class="postbox__thumb postbox__audio w-img p-relative">
+        <?php echo wp_oembed_get( $dustrilox_audio_url ); ?>
+    </div>
+    <?php endif;?>
 
-        <div class="postbox__content">
-            <!-- blog meta -->
-            <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
-            <h3 class="postbox__title">
-                <?php the_title();?>
-            </h3>
-            <div class="postbox__text">
-               <?php the_content();?>
-                <?php
+    <div class="postbox__content">
+        <!-- blog meta -->
+        <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
+        <h3 class="postbox__title">
+            <?php the_title();?>
+        </h3>
+        <div class="postbox__text">
+            <?php the_content();?>
+            <?php
                     wp_link_pages( [
                         'before'      => '<div class="page-links">' . esc_html__( 'Pages:', 'dustrilox' ),
                         'after'       => '</div>',
@@ -34,35 +34,33 @@
                         'link_after'  => '</span>',
                     ] );
                 ?>
-            </div>
-            <?php print dustrilox_get_tag();?>
         </div>
-    </article>
+        <?php print dustrilox_get_tag();?>
+    </div>
+</article>
 
-    <?php else: ?>
+<?php else: ?>
 
-    <article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-audio mb-50' );?>>
-        <?php if ( !empty( $dustrilox_audio_url ) ): ?>
-        <div class="postbox__thumb postbox__audio w-img p-relative">
-            <?php echo wp_oembed_get( $dustrilox_audio_url ); ?>
+<article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-audio mb-50' );?>>
+    <?php if ( !empty( $dustrilox_audio_url ) ): ?>
+    <div class="postbox__thumb postbox__audio w-img p-relative">
+        <?php echo wp_oembed_get( $dustrilox_audio_url ); ?>
+    </div>
+    <?php endif;?>
+    <div class="postbox__content">
+        <!-- blog meta -->
+        <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
+
+        <h3 class="postbox__title">
+            <a href="<?php the_permalink();?>"><?php the_title();?></a>
+        </h3>
+        <div class="postbox__text">
+            <?php the_excerpt();?>
         </div>
-        <?php endif;?>
-        <div class="postbox__content">
-            <!-- blog meta -->
-            <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
 
-            <h3 class="postbox__title">
-                <a href="<?php the_permalink();?>"><?php the_title();?></a>
-            </h3>
-            <div class="postbox__text">
-                <?php the_excerpt();?>
-            </div>
-
-            <!-- blog btn -->
-            <?php get_template_part( 'template-parts/blog/blog-btn' ); ?>
-        </div>
-    </article>
+        <!-- blog btn -->
+        <?php get_template_part( 'template-parts/blog/blog-btn' ); ?>
+    </div>
+</article>
 <?php
 endif;?>
-
-
