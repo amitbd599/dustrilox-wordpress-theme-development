@@ -278,9 +278,9 @@ if ( !function_exists( 'dustrilox_search_filter_form' ) ) {
     function dustrilox_search_filter_form( $form ) {
 
         $form = sprintf(
-            '<div class="sidebar__widget-px"><div class="search-px"><form class="sidebar__search p-relative" action="%s" method="get">
+            '<div class="blog-sidebar__search p-relative"><div class="search-px"><form action="%s" method="get">
       	<input type="text" value="%s" required name="s" placeholder="%s">
-      	<button type="submit"> <i class="far fa-search"></i>  </button>
+      	<button type="submit"> <i class="fa-light fa-magnifying-glass"></i>  </button>
 		</form></div></div>',
             esc_url( home_url( '/' ) ),
             esc_attr( get_search_query() ),

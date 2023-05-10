@@ -18,9 +18,9 @@ function dustrilox_widgets_init() {
         'name'          => esc_html__( 'Blog Sidebar', 'dustrilox' ),
         'id'            => 'blog-sidebar',
         'description'          => esc_html__( 'Set Your Blog Widget', 'dustrilox' ),
-        'before_widget' => '<div id="%1$s" class="sidebar__widget mb-60 %2$s">',
+        'before_widget' => '<div id="%1$s" class="blog-sidebar__widget mb-60 %2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<div class="sidebar__widget-head mb-35"><h3 class="sidebar__widget-title">',
+        'before_title'  => '<div class="blog-sidebar__widget-head mb-30"> <h3 class="blog-sidebar__widget-title">',
         'after_title'   => '</h3></div>',
     ] );
 
